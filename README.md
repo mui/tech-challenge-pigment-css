@@ -59,7 +59,7 @@ Your goal would be to transform the `styled` and the `sx` calls into a valid CSS
 
 ```jsx
 import { styled } from '@pigment-css/react';
-import 'styles.css';
+import './styles.css';
 
 const Div = styled('div')({
   className: 'hashed-string1'
