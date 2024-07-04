@@ -1,13 +1,13 @@
 # Pigment CSS technical challenge @ MUI
 
 This challenge is part of the hiring process for the Staff Engineer - Pigment CSS positions at MUI.
-The idea is to make as much progress as possible under a given time constraint (1-2 hours).
+The idea is to make as much progress as possible under a given time constraint (2 hours).
 
 ## Why are we doing this?
 
 At MUI, because we are a DevTools company, we put a lot of accent on the quality of the work on the tools we create.
-The Pigment CSS project was started because we wanted to solve one main problems for our users, the performance of their apps and the support for React Server Components, without compromising their Developer Experience.
-The idea of this challenge, is to test out how deep you can go into solving technical problems that will help us achieve the these goals.
+We started to work on Pigment CSS because we wanted to solve the main problems developers face: the performance of their apps and the support for React Server Components, without compromising their developer experience.
+The idea of this challenge is to test out how deep you can go into solving technical problems that will help us achieve these goals.
 We want to get a glimpse of how you will perform in the role.
 
 ## Context about MUI
@@ -22,23 +22,18 @@ Pigment CSS plays a critical role in this, as performance is one of the main cri
 
 Head to [our Handbook](https://mui-org.notion.site/Why-MUI-d8b8c142a6a44e3aa963f26edf4e03db) to learn more.
 
-## Summary
+## The challenge
 
-The objective of the challenge is to implement build time transformation of an example of React code that will generate a CSS and assosiate it with the respective React components.
+The objective of the challenge is to implement a build-time transpilation of an example React code to generate CSS and associate that CSS with its respective React elements.
+The code you will write could be used inside a zero-runtime CSS-in-JS library that focuses on the basic use-case of how people may style their components.
 
-###### _~2 hours - The basics_
-
-### Introduction
-
-The idea of this challenge is to implement a transformation of an example React code, that could be used inside a zero-runtime CSS-in-JS library that focuses on the basic use-case of how people may style their components.
-
-Here is the example code that you will need to transform:
+Here is the example code that you need to transform:
 
 ```jsx
 import { styled } from '@pigment-css/react';
 
 const Div = styled('div')({
-  border: '1px solid black'
+  border: '1px solid black',
 });
 
 export default function App(props) {
@@ -49,11 +44,11 @@ export default function App(props) {
         ...props.primary ? { background: 'blue' } : { background: 'red' },
       }}
     />
-  )
+  );
 }
 ```
 
-Your goal would be to transform the `styled` and the `sx` calls into a valid CSS and a transformed JavaScript code that can later be used by a simple runtime after the CSS is already extracted. The result output should look like this:
+Your goal is to transform the `styled` and the `sx` calls into a valid CSS and a transformed JavaScript code that can later be used by a simple JavaScript runtime after the CSS is already extracted. The resulting output should look something like this:
 
 *JavaScript*
 
@@ -62,7 +57,7 @@ import { styled } from '@pigment-css/react';
 import 'styles.css';
 
 const Div = styled('div')({
-  className: 'hashed-string1'
+  className: 'hashed-string1',
 });
 
 export default function App(props) {
@@ -71,10 +66,10 @@ export default function App(props) {
       {...props}
       className="hashed-string2"
       style={{
-          '--primary-var': props.primary ? 'blue' : 'red'
+        '--primary-var': props.primary ? 'blue' : 'red',
       }}
     />
-  )
+  );
 }
 ```
 
@@ -92,15 +87,15 @@ export default function App(props) {
 
 ### Work environment
 
-To save you time, a working environment was created.
+To save you time, we created a working environment.
 You can install this environment by following these steps:
 
 - clone the repo: `git clone git@github.com:mui/tech-challenge-pigment-css.git`
 - install the dependencies: `pnpm install`
-- start Next.js: `pnpm start`
+- start Vite: `pnpm start`
 - open http://localhost:5173/
 
-You can find the source of this URL at `src/App.jsx`. Your goal is to implement the `utils/transform.js` function that is responsible for doing the transformation. Uou can use the example code from above in the Input code textarea and check the results of the generated JavaScript and CSS.
+You can find the source of this URL in `src/App.jsx`. Your goal is to implement the `utils/transform.js` function that is responsible for doing the transformation. You can use the example code from above in the Input code textarea and check the results of the generated JavaScript and CSS.
 
 ## Submission
 
@@ -108,8 +103,8 @@ Instructions:
 
 - **DO NOT** fork / host your project on a public repository.
 - Please send us a zip file containing this project using the upload link that we have provided by email (**with** the _.git_ folder).
-- To significantly reduce the size of the archive, you can remove the `/_node_modules_/` and `/docs/.next/` folders.
-- If you don't have the upload link, you can simply send it to job@mui.com.
+- To significantly reduce the size of the file, remove the `/_node_modules_/` folder.
+- If you don't have the upload link, you can send it to job@mui.com.
 
 We're excited and looking forward to seeing what you'll create!
 Good luck 🚀
