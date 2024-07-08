@@ -1,7 +1,7 @@
 # Pigment CSS technical challenge @ MUI
 
 This challenge is part of the hiring process for the Staff Engineer - Pigment CSS positions at MUI.
-The idea is to make as much progress as possible under a given time constraint (2 hours).
+The idea is to make as much progress as possible under a given time constraint (2-3 hours).
 
 ## Why are we doing this?
 
