@@ -85,7 +85,15 @@ export default function App(props) {
 }
 ```
 
-We encourige you to think of more complex scenarios on how the styles and the sx input can be created and incorporate those in your solution
+We encourage you to think of more complex scenarios on how the styles and the sx input can be created and incorporate those in your solution.
+If time permits, you can also try to add support for tagged-template literal syntax, eg:
+
+```js
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: #BF4F74;
+`;
 When sending the challenge, you can include some input examples that you used as a test-cases.
 
 ### Work environment
