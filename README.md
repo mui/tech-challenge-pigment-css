@@ -1,7 +1,7 @@
 # Pigment CSS technical challenge @ MUI
 
 This challenge is part of the hiring process for the Staff Engineer - Pigment CSS positions at MUI.
-The idea is to make as much progress as possible under a given time constraint (2 hours).
+The idea is to make as much progress as possible under a given time constraint (2-3 hours).
 
 ## Why are we doing this?
 
@@ -24,10 +24,10 @@ Head to [our Handbook](https://mui-org.notion.site/Why-MUI-d8b8c142a6a44e3aa963f
 
 ## The challenge
 
-The objective of the challenge is to implement a build-time transpilation of an example React code to generate CSS and associate that CSS with its respective React elements.
+The objective of the challenge is to implement a build-time transpilation of a React code to generate CSS and associate that CSS with its respective React elements.
 The code you will write could be used inside a zero-runtime CSS-in-JS library that focuses on the basic use-case of how people may style their components.
 
-Here is the example code that you need to transform:
+Here is the example code that you can start from:
 
 ```jsx
 import { styled } from '@pigment-css/react';
@@ -84,6 +84,18 @@ export default function App(props) {
   background: var(--primary-var);
 }
 ```
+
+We encourage you to think of more complex scenarios on how the styles and the sx input can be created and incorporate those in your solution.
+If time permits, you can also try to add support for tagged-template literal syntax, eg:
+
+```js
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: #BF4F74;
+`;
+
+When sending the challenge, you can include some input examples that you used as a test-cases.
 
 ### Work environment
 
