@@ -94,6 +94,7 @@ const Title = styled.h1`
   text-align: center;
   color: #BF4F74;
 `;
+```
 
 When sending the challenge, you can include some input examples that you used as a test-cases.
 
