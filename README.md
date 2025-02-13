@@ -18,7 +18,7 @@ We're unifying the fragmented ecosystem of dependencies into a single set of sim
 Our mission is, ultimately, to make building great UIs and web apps a breeze ⎯ quicker, simpler, and accessible to more people.
 At the end of the day, it's about [_writing less code_](https://youtu.be/GnO7D5UaDig?t=2451).
 
-Pigment CSS plays a critical role in this, as performance is one of the main criteria for building *great* UIs.
+Pigment CSS plays a critical role in this, as performance is one of the main criteria for building _great_ UIs.
 
 Head to [our Handbook](https://mui-org.notion.site/Why-MUI-d8b8c142a6a44e3aa963f26edf4e03db) to learn more.
 
@@ -30,10 +30,10 @@ The code you will write could be used inside a zero-runtime CSS-in-JS library th
 Here is the example code that you can start from:
 
 ```jsx
-import { styled } from '@pigment-css/react';
+import { styled } from "@pigment-css/react";
 
-const Div = styled('div')({
-  border: '1px solid black',
+const Div = styled("div")({
+  border: "1px solid black",
 });
 
 export default function App(props) {
@@ -41,7 +41,7 @@ export default function App(props) {
     <Div
       {...props}
       sx={{
-        ...props.primary ? { background: 'blue' } : { background: 'red' },
+        ...(props.primary ? { background: "blue" } : { background: "red" }),
       }}
     />
   );
@@ -50,14 +50,14 @@ export default function App(props) {
 
 Your goal is to transform the `styled` and the `sx` calls into a valid CSS and a transformed JavaScript code that can later be used by a simple JavaScript runtime after the CSS is already extracted. The resulting output should look something like this:
 
-*JavaScript*
+### JavaScript
 
 ```jsx
-import { styled } from '@pigment-css/react';
-import './styles.css';
+import { styled } from "@pigment-css/react";
+import "./styles.css";
 
-const Div = styled('div')({
-  className: 'hashed-string1',
+const Div = styled("div")({
+  className: "hashed-string1",
 });
 
 export default function App(props) {
@@ -66,14 +66,14 @@ export default function App(props) {
       {...props}
       className="hashed-string2"
       style={{
-        '--primary-var': props.primary ? 'blue' : 'red',
+        "--primary-var": props.primary ? "blue" : "red",
       }}
     />
   );
 }
 ```
 
-*CSS*
+### CSS
 
 ```css
 .hashed-string1 {
@@ -92,7 +92,7 @@ If time permits, you can also try to add support for tagged-template literal syn
 const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
-  color: #BF4F74;
+  color: #bf4f74;
 `;
 ```
 
@@ -106,7 +106,8 @@ You can install this environment by following these steps:
 - clone the repo: `git clone git@github.com:mui/tech-challenge-pigment-css.git`
 - install the dependencies: `pnpm install`
 - start Vite: `pnpm start`
-- open http://localhost:5173/
+- open [http://localhost:5173/](http://localhost:5173/)
+- We have Babel preconfigured for you in `src/utils/transform.js`. If you are planning on using Babel, just uncomment the first implementation.
 
 You can find the source of this URL in `src/App.jsx`. Your goal is to implement the `utils/transform.js` function that is responsible for doing the transformation. You can use the example code from above in the Input code textarea and check the results of the generated JavaScript and CSS.
 
@@ -117,7 +118,7 @@ Instructions:
 - **DO NOT** fork / host your project on a public repository.
 - Please send us a zip file containing this project using the upload link that we have provided by email (**with** the _.git_ folder).
 - To significantly reduce the size of the archive, remove the `/_node_modules_/` folder.
-- If you don't have the upload link, you can send it to job@mui.com.
+- If you don't have the upload link, you can send it to [job@mui.com](job@mui.com).
 
 We're excited and looking forward to seeing what you'll create!
 Good luck 🚀
